@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fellowships.</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='styles.css') }}"
+    />
+</head>
+
+<body>
+
+<div class="nav">
+    <a href="/grants">Grants</a>
+    <a href="/">Fellowships</a>
+    <a href="/residencies">Residencies</a>
+</div>
+
+<div class="fellowship-container">
+
+    <h1>Fellowships.</h1>
+
+    {% for fellowship in fellowships %}
+
+    <div class="fellowship-card">
+
+        <img
+            class="fellowship-logo"
+            src="https://www.google.com/s2/favicons?domain={{ fellowship[4] }}&sz=128"
+        >
+
+        <div class="fellowship-info">
+
+            <div class="fellowship-top">
+
+                <div>
+                    <h2>{{ fellowship[1] }}</h2>
+
+                    <p class="organization">
+                        {{ fellowship[2] }}
+                    </p>
+                </div>
+
+                <a
+                    class="website-link"
+                    href="https://{{ fellowship[4] }}"
+                    target="_blank"
+                >
+                    Visit
+                </a>
+
+            </div>
+
+            <p class="description">
+                {{ fellowship[3] }}
+            </p>
+
+            <div class="meta-row">
+
+                <span class="meta-pill">
+                    {{ fellowship[6] }}
+                </span>
+
+                <span class="meta-pill">
+                    {{ fellowship[7] }}
+                </span>
+
+                <span class="meta-pill">
+                    {{ fellowship[5] }}
+                </span>
+
+            </div>
+
+            <div class="tags">
+
+                {% for tag in fellowship[8].split(",") %}
+
+                <span class="tag">
+                    {{ tag.strip() }}
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
