@@ -1,6 +1,9 @@
 import sqlite3
+import os
 
-connection = sqlite3.connect("database.db")
+DB_PATH = os.environ.get("DATABASE_PATH", "database.db")
+
+connection = sqlite3.connect(DB_PATH)
 
 cursor = connection.cursor()
 
