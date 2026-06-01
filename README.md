@@ -1,4 +1,4 @@
-# Fellowships. 🚀
+# Fellowships.io 
 
 A clean little directory of **fellowships, grants, residencies, and VCs** for ambitious students and builders.
 
